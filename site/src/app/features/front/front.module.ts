@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FrontComponent } from './front.component';
+import { HeaderFrontModule } from '../header-front/header-front.module';
+import { FooterFrontModule } from '../footer-front/footer-front.module';
 
 
 
@@ -9,7 +11,9 @@ import { FrontComponent } from './front.component';
     FrontComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HeaderFrontModule,
+    FooterFrontModule
   ],
   exports: [
     FrontComponent

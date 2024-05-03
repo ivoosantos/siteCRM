@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TesteFrontComponent } from './teste-front.component';
+import { GruposComponent } from './grupos.component';
+import { GruposRoutingModule } from './grupos-routing.module';
 import { FrontModule } from 'src/app/features/front/front.module';
-import { TesteFrontRoutingModule } from './teste-front-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    TesteFrontComponent
+    GruposComponent
   ],
   imports: [
     CommonModule,
-    TesteFrontRoutingModule,
+    GruposRoutingModule,
     FrontModule
   ]
 })
-export class TesteFrontModule { }
+export class GruposModule { }

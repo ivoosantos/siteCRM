@@ -34,9 +34,17 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/carousel.css",
+              "src/assets/css/blog.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/bootstrapjs/jquery.min.js",
+              "src/assets/bootstrapjs/jquery-3.3.1.slim.min.js",
+              "src/assets/bootstrapjs/bootstrap.min.js",
+              "src/assets/bootstrapjs/holder.min.js"
+            ]
           },
           "configurations": {
             "production": {

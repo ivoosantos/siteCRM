@@ -1,44 +1,21 @@
 <front>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <!-- {foreach from=$CAROUSEL item=C} -->
-            <li data-target="#myCarousel" data-slide-to="{$C.id}"></li>
-            <!-- {/foreach} -->
-            <!-- @* {*
-            <li data-target="#myCarousel"></li>
-            <li data-target="#myCarousel"></li>
-            <li data-target="#myCarousel"></li> *} *@ -->
+            <li data-target="#myCarousel" *ngFor="let c of carousel" data-slide-to=""></li>
+            <!-- <li data-target="#myCarousel" *ngFor="let c of carousel" data-slide-to="{{c.id}}"></li> -->
         </ol>
         <div class="carousel-inner">
-    
-    
-            <!-- @* {foreach from=$CAROUSEL item=C}
-    
-            {if $C.active == "1"} *@ -->
-            <div class="carousel-item active">
-                <img src="../../../assets/image/Banner-contato.jpg" alt="First slide" />
+            
+            <div class="carousel-item active" *ngFor="let c of carousel; let i = index" [ngClass]="{'active': i == 0}">
+                <img src="data:image/png;base64,{{c.imgByte}}" alt="First slide" />
                 <div class="container">
                     <div class="carousel-caption text-left">
-                        <h1>Oi 2</h1>
-                        <p>Informação</p>
+                        <h1>{{ c.titulo }}</h1>
+                        <p>{{ c.informacao }}</p>
                         <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
                     </div>
                 </div>
             </div>
-            <!-- @* {/if}
-            {if $C.active != "1"} *@ -->
-            <div class="carousel-item">
-                <img src="../../../assets/image/Banner-grupo.jpg" alt="" />
-                <div class="container">
-                    <div class="carousel-caption text-left">
-                        <h1>Oi</h1>
-                        <p>Teste</p>
-                        <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
-                    </div>
-                </div>
-            </div>
-            <!-- @* {/if}
-            {/foreach} *@ -->
     
         </div><!--class="carousel-inner"-->
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

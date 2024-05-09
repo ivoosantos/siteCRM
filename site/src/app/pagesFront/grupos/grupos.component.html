@@ -5,29 +5,23 @@
             <!-- Example row of columns -->
             <hr>
             <div class="row">
-                
-                <!-- @* {foreach from=$GRUPO item=G} *@ -->
-                    <div class="col-md-3">
-                        <!-- @* {* <input type="hidden" name="id" value="{$G.id}" /> *} *@ -->
-                        <img class="card-img-top" src="../../../assets/image/Mockup grupo - Casais.png" alt="Imagem de capa do card" width="300" height="300">
-                        <h4>Líder - <small>Aqui fica o nome do Líder</small></h4>
-                        <p>Informação de Slug</p>
-                        <!-- @* {* <p><a class="btn btn-secondary" href="#" role="button">{$G.slug} &raquo;</a></p> *} *@ -->
-                        
-                        <form name="clieditar" method="post" action="{$SOBREGRUPO}">
-                            <input type="hidden" name="id" id="id" value="{$G.id}">
-                            <button class="card-footer bg-info text-light btn btn-primary btn-lg btn-block">slug para acessar info</button>
-                            <!-- @* {* <div class="card-footer bg-info text-dark"> *}
-                            {* <small style="color: #FFFFFF;">{$G.slug}</small> *}
-                            {* </div> *} *@ -->
-                        </form> 
-                        <br />
-                    </div>
-                <!-- @* {/foreach} *@ -->
+                <div class="col-md-3" *ngFor="let g of grupos">
+                    <!-- @* {* <input type="hidden" name="id" value="{$G.id}" /> *} *@ -->
+                    <img class="card-img-top" src="data:image/png;base64,{{g.imgByte}}" alt="Imagem de capa do card" width="300" height="300">
+                    <h4>Líder - <small>{{g.nome}}</small></h4>
+                    <p>{{g.slug}}</p>
+                    <!-- @* {* <p><a class="btn btn-secondary" href="#" role="button">{$G.slug} &raquo;</a></p> *} *@ -->
                     
+                    <form name="groupview" method="post" action="">
+                        <input type="hidden" name="id" id="id" value="{{g.id}}">
+                        <button class="card-footer bg-info text-light btn btn-primary btn-lg btn-block">Mais Informações</button>
+                        <!-- @* {* <div class="card-footer bg-info text-dark"> *}
+                        {* <small style="color: #FFFFFF;">{$G.slug}</small> *}
+                        {* </div> *} *@ -->
+                    </form> 
+                    <br />
+                </div>
             </div>
-
         <!-- <hr> -->
-
     </div>
 </front>

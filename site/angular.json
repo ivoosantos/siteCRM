@@ -34,7 +34,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap.css",
               "src/assets/css/carousel.css",
               "src/assets/css/blog.css",
               "src/styles.scss"

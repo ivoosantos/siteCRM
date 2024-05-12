@@ -1,12 +1,12 @@
 <front>
     <div class="container">
         <br />
-            <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-                <div class="col-md-6 px-0">
-                    <h1 class="display-6 font-italic">Aqui você encontra as melhores pregações!</h1>
-                    <p class="lead my-6">Aqui você encontra tudo sobre nossas pregações.</p>
-                </div>
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-6 font-italic">Mensagens que vão abençoar sua vida!</h1>
+                <p class="lead my-6">Aqui você encontra tudo sobre nossas pregações.</p>
             </div>
+        </div>
         <article>
             <div class="row mb-2">
                 <div class="col-md-6" *ngFor="let b of blogs">
@@ -16,10 +16,9 @@
                             <h4 class="mb-0">{{b.titulo}}</h4>
                             <div class="mb-1 text-muted">{{b.dataPost}}</div>
                             <p class="card-text mb-auto">{{b.slug}}</p>
-                            <form name="clieditar" method="post" action="">
-                                <input type="hidden" name="id" id="id" value="{{b.id}}">
-                                <button class="bg-info text-light btn btn-primary btn-block">Continue lendo...</button>
-                            </form>
+                            <button (click)="getByIdBlog(b.id)" class="bg-info text-light btn btn-primary btn-block" data-toggle="modal" data-target="#staticBackdrop">
+                                Continue lendo...
+                            </button>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <img class="bd-placeholder-img" width="230" height="230" src="data:image/png;base64,{{b.imgByte}}" alt="Imagem de capa do card" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" />
@@ -28,5 +27,26 @@
                 </div>
             </div>
         </article>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title" id="staticBackdropLabel">{{blog.titulo}}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    {{blog.texto}}
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                </div>
+            </div>
+            </div>
         </div>
+    </div>
 </front>

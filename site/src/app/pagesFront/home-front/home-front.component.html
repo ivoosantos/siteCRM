@@ -7,7 +7,7 @@
         <div class="carousel-inner">
             
             <div class="carousel-item active" *ngFor="let c of carousel; let i = index" [ngClass]="{'active': i == 0}">
-                <img src="data:image/png;base64,{{c.imgByte}}" alt="First slide" />
+                <img src="data:image/png;base64,{{c.imgByte}}" alt="First slide"/>
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>{{ c.titulo }}</h1>

@@ -21,7 +21,6 @@ export class HomeFrontComponent implements OnInit {
   getAllCarousel() {
     this.homeFrontService.getAllCarousels().subscribe((response: ICarousel[]) => {
       this.carousel = response;
-      console.log('Obj Carousel: ', this.carousel);
     })
   }
 

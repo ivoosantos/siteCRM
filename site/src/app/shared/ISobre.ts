@@ -3,5 +3,5 @@ export interface ISobre {
     titulo: string;
     descricao: string;
     tipo: string;
-    // idigreja: number;
+    idigreja: number;
 }

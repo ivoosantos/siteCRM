@@ -14,9 +14,11 @@
                         <div class="col p-4 d-flex flex-column position-static">
                             <strong class="d-inline-block mb-2 text-primary">Trabalho sobre:</strong>
                             <h4 class="mb-0">{{m.titulo}}</h4>
-                            <div class="mb-1 text-muted">{{m.dataPost}}</div>
+                            <div class="mb-1 text-muted">{{m.dataPost | date : 'dd/MM/yyyy HH:mm' : 'pt-BR'}}</div>
                             <p class="card-text mb-auto">{{m.slug}}</p>
-                            <a href="/Missao/@missao.id" class="bg-info text-light btn btn-primary btn-block">Continue lendo...</a>
+                            <button (click)="getByIdMissao(m.id)" class="bg-info text-light btn btn-primary btn-block" data-toggle="modal" data-target="#staticBackdrop">
+                                Continue lendo...
+                            </button>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <img class="bd-placeholder-img" width="230" height="300" src="data:image/png;base64,{{m.imgByte}}" alt="Imagem de capa do card" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" />
@@ -25,5 +27,26 @@
                 </div>
             </div>
         </article>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title" id="staticBackdropLabel">{{missao.titulo}}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    {{missao.texto}}
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 </front>

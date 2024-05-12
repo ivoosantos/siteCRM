@@ -13,6 +13,7 @@ export class SobreComponent implements OnInit {
   constructor(private sobreService: SobreService, private router: Router) { }
 
   sobre: ISobre[] = [];
+  about: Sobre = new Sobre;
 
   ngOnInit(): void {
     this.getSobre();
@@ -20,9 +21,16 @@ export class SobreComponent implements OnInit {
 
   getSobre() {
     this.sobreService.getSobre().subscribe((response: ISobre[]) => {
-      console.log('Obj Sobre: ', response);
-      this.sobre = response;
+      this.about = response[0];
     })
   }
 
+}
+
+export class Sobre {
+  id?: number = 0;
+    titulo: string = '';
+    descricao: string = '';
+    tipo: string = '';
+    idigreja: number = 0;
 }

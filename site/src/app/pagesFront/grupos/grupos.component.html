@@ -1,5 +1,5 @@
 <front>
-    <img src="../../../assets/image/Banner-grupo.jpg" alt="Imagem responsiva" width="100%" height="500px">
+    <img src="../../../assets/image/Banner-grupo.jpg" alt="Imagem responsiva" width="100%" height="300px">
 
     <article>
         <div class="container">
@@ -11,19 +11,37 @@
                     <img class="card-img-top" src="data:image/png;base64,{{g.imgByte}}" alt="Imagem de capa do card" width="300" height="300">
                     <h4>Líder - <small>{{g.nome}}</small></h4>
                     <p>{{g.slug}}</p>
-                    <!-- @* {* <p><a class="btn btn-secondary" href="#" role="button">{$G.slug} &raquo;</a></p> *} *@ -->
-                    
-                    <form name="groupview" method="post" action="">
-                        <input type="hidden" name="id" id="id" value="{{g.id}}">
-                        <button class="card-footer bg-info text-light btn btn-primary btn-lg btn-block">Mais Informações</button>
-                        <!-- @* {* <div class="card-footer bg-info text-dark"> *}
-                        {* <small style="color: #FFFFFF;">{$G.slug}</small> *}
-                        {* </div> *} *@ -->
-                    </form> 
+                    <button class="card-footer bg-info text-light btn btn-primary btn-lg btn-block" 
+                            (click)="getId(g.id)"
+                            data-toggle="modal" data-target="#staticBackdrop"
+                    >
+                        Mais Informações
+                    </button>
                     <br />
                 </div>
             </div>
         <!-- <hr> -->
         </div>
     </article>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h3 class="modal-title" id="staticBackdropLabel">{{grupo.titulo}}</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                {{grupo.descricao}}
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+            </div>
+        </div>
+        </div>
+    </div>
 </front>

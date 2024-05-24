@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="loginForm" class="form-signin">
+        <h2 class="form-signin-heading">Área Restrita</h2>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="text" formControlName="email" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" formControlName="senha"id="inputPassword" class="form-control" placeholder="Senha" required>
+        <!-- <button class="btn btn-lg btn-info btn-block" name="txt_logar" value="txt_logar">Acessar</button> -->
+        <button class="btn btn-lg btn-info btn-block" (click)="logar()">Acessar</button>
+        
+        <br>
+        <div class="form-group col-md-12">
+            <a class="btn btn-lg btn-danger btn-block" name="esqueciSenha" href="/">Voltar para o Site</a>
+        </div>
+        
+    </form>
+</div>

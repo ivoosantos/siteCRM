@@ -1,0 +1,44 @@
+<script src="../../../assets/tinymce/tinymce/js/tinymce/tinymce.min.js"></script>
+    
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Editar Página Empresa</div>
+        <div class="card-body">
+          <form name="empresainsere" method="post" action="" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="text">TÍTULO</label>
+              <div class="form-label-group">
+                <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Titulo" required="required">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <hr>
+              <label>Imagem Destaque</label>
+              <input type="file" name="img" class="form-control btn btn-success" id="img">
+              <input type="hidden" name="img_atual" id="img_atual" value="{}">
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Sobre</label>
+              <div class="form-label-group">
+                <!--<input type="email" id="inputEmail" class="form-control" placeholder="Sobre" required="required" autofocus="autofocus">-->
+                <!-- <editor [init]="{plugins: ['binding'], toolbar: 'undo redo'}"></editor> -->
+                <!-- <editor [init]="editorConfig"></editor> -->
+
+                <textarea name="descricao" id="descricao" rows="5" class="form-control"></textarea>
+                <script>
+                    tinymce.init({ selector:'#descricao'  });
+                </script>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="text">Tipo</label>
+              <div class="form-label-group">
+                <input type="text" id="tipo" name="tipo" class="form-control" placeholder="Tipo" required="required">
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" name="btn_gravar" value="btn_gravar"> Gravar </button>
+          </form>
+        </div>
+      </div>
+    </div>

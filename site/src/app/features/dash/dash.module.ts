@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashComponent } from './dash.component';
+import { HeaderDashModule } from '../header-dash/header-dash.module';
+import { DashRoutingModule } from './dash-rounting.module';
 
 
 
@@ -9,7 +11,9 @@ import { DashComponent } from './dash.component';
     DashComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DashRoutingModule,
+    HeaderDashModule
   ],
   exports: [
     DashComponent

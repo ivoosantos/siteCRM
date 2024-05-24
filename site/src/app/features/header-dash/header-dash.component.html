@@ -1,0 +1,68 @@
+<!-- Sidebar user_tipo-->
+<ul class="sidebar navbar-nav" style="height: 100%;">
+    <li class="nav-item active">
+    <a class="nav-link" href="{$GET_SITE_ADM}">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span> Dashboard - Teste</span>
+    </a>
+  </li>
+      
+  <!-- {if $TIPO == 'G'} -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-folder"></i>
+        <span> Páginas</span>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <h6 class="dropdown-header">Telas do Site:</h6>
+        <a class="dropdown-item" href="/admin">Home</a>
+        <a class="dropdown-item" href="/admin/sobre">Igreja</a>
+        <a class="dropdown-item" href="/admin/">Carrossel</a>
+        <a class="dropdown-item" href="/admin/">Grupo</a>
+        <a class="dropdown-item" href="/admin/">Pedido de Oração</a>
+        <a class="dropdown-item" href="/admin/">Contato</a>
+        <a class="dropdown-item" href="/admin/">Missões</a>
+        <a class="dropdown-item" href="/admin/">Blog</a>
+        <div class="dropdown-divider"></div>
+        <!-- {* <h6 class="dropdown-header">Outras Páginas:</h6> *} -->
+      </div>
+    </li>
+  <!-- {/if} -->
+
+      <!-- {if $TIPO == 'L' || $TIPO == 'G'} -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-user"></i>
+            <span> Louvor:</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Membros Louvor e Escala</h6>
+            <a class="dropdown-item" href="{$MEMBROLOUVOR}">Membros do Louvor</a>
+            <a class="dropdown-item" href="{$ESCALA}">Escala Louvor</a>
+          </div>
+        </li>
+      <!-- {/if} -->
+
+      
+      <!-- {if $TIPO == 'G'} -->
+      <li class="nav-item">
+        <a class="nav-link" href="{$PAG_USUARIOS}">
+          <i class="fas fa-fw fa-users"></i>
+          <span> Usuários</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-life-ring"></i>
+          <span> Configurações</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Login Screens:</h6>
+          <!-- {* <a class="dropdown-item" href="login.html">Login</a> *} -->
+          <a class="dropdown-item" href="{$PAG_REGISTRAR_LOGIN}">Registrar</a>
+          <!-- {* <a class="dropdown-item" href="{$PAG_ESQUECI_SENHA}">Esqueceu sua Senha</a> *} -->
+          <div class="dropdown-divider"></div>
+          <!-- {* <h6 class="dropdown-header">Outras Páginas:</h6> *} -->
+        </div>
+      </li>
+    <!-- {/if} -->
+    </ul>

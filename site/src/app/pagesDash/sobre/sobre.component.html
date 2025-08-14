@@ -1,4 +1,4 @@
-<script src="../../../assets/tinymce/tinymce/js/tinymce/tinymce.min.js"></script>
+<!-- <script src="../../../assets/tinymce/tinymce/js/tinymce/tinymce.min.js"></script> -->
     
     <div class="container">
       <div class="card card-login mx-auto mt-5">
@@ -23,11 +23,11 @@
                 <!--<input type="email" id="inputEmail" class="form-control" placeholder="Sobre" required="required" autofocus="autofocus">-->
                 <!-- <editor [init]="{plugins: ['binding'], toolbar: 'undo redo'}"></editor> -->
                 <!-- <editor [init]="editorConfig"></editor> -->
-
-                <textarea name="descricao" id="descricao" rows="5" class="form-control"></textarea>
-                <script>
+                <angular-editor name="editor" [placeholder]="'Enter text here...'" [config]="editorConfig" [(ngModel)]="htmlContent"></angular-editor>
+                <!-- <textarea name="descricao" id="descricao" rows="5" class="form-control"></textarea> -->
+                <!-- <script>
                     tinymce.init({ selector:'#descricao'  });
-                </script>
+                </script> -->
               </div>
             </div>
 

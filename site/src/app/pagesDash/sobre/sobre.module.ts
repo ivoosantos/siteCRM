@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SobreComponent } from './sobre.component';
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -10,12 +12,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
   ],
   imports: [
     CommonModule,
-    EditorModule
+    AngularEditorModule, FormsModule, HttpClientModule
   ],
-  providers: [
-    {
-      provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'
-    }
-  ]
+  providers: []
 })
 export class SobreModule { }
